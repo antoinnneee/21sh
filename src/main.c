@@ -6,7 +6,7 @@
 /*   By: abureau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/20 11:47:18 by abureau           #+#    #+#             */
-/*   Updated: 2016/12/15 11:06:16 by abureau          ###   ########.fr       */
+/*   Updated: 2016/12/15 12:35:25 by abureau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,13 @@ t_cmd		*parse_command(char *tmp, t_msh *msh)
 		}
 	else
 		return (NULL);
+}
+
+t_cmd		*cmd_setter(char *commande, t_msh *msh)
+{
+	char	**c_split;
+	c_split = ft_strsplit(ft_strtrim(commande), ";");
+	
 }
 
 int			main(int argc, char **argv, char **environ)

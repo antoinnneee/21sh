@@ -6,7 +6,7 @@
 /*   By: abureau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/20 13:34:53 by abureau           #+#    #+#             */
-/*   Updated: 2016/12/15 10:35:30 by abureau          ###   ########.fr       */
+/*   Updated: 2016/12/15 12:32:14 by abureau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,18 @@ typedef	struct	s_minish{
 }				t_msh;
 
 typedef struct	s_command{
-	char		*prog;
-	char		**param;
-	char		**option;
-	int			nbparam;
+	char				*prog;
+	char				**param;
+	char				**option;
+	int					nbparam;
+	int					is_modif;
+	void				*modif;
+	struct s_command	*next;
 }				t_cmd;
 
 typedef unsigned long long t_u64;
 
+t_cmd			*cmd_setter();
 void			check_env(t_cmd **cmd, t_msh *msh);
 void			init_pwd(t_msh **msh);
 void			inimain(t_msh **msh);
